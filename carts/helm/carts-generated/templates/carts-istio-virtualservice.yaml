@@ -14,6 +14,6 @@ spec:
   - route:
     - destination:
         host: carts-canary.musicshop-production.svc.cluster.local
-      weight: 100
     - destination:
         host: carts-primary.musicshop-production.svc.cluster.local
+      weight: 100
