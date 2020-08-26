@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  creationTimestamp: null
+  name: carts-db
+spec:
+  gateways:
+  - public-gateway.istio-system
+  - mesh
+  hosts:
+  - carts-db.musicshop-staging.34.72.132.151.xip.io
+  - carts-db
+  http:
+  - route:
+    - destination:
+        host: carts-db.musicshop-staging.svc.cluster.local
