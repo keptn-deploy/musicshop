@@ -1,0 +1,4 @@
+apiVersion: v2
+description: A Helm Chart for project musicshop-umbrella
+name: musicshop-umbrella
+version: 0.1.0
