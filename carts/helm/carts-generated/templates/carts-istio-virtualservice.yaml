@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  creationTimestamp: null
+  name: carts
+spec:
+  gateways:
+  - public-gateway.istio-system
+  - mesh
+  hosts:
+  - carts.musicshop-production.34.72.132.151.xip.io
+  - carts
+  http:
+  - route:
+    - destination:
+        host: carts-canary.musicshop-production.svc.cluster.local
+    - destination:
+        host: carts-primary.musicshop-production.svc.cluster.local
+      weight: 100
